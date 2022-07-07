@@ -16,7 +16,12 @@ import java.util.Optional;
 @Service
 @Slf4j
 public class TradeStoreService {
-
+    
+    /**
+     *This method will insert trade data after checking all the condition
+     * @param currentTrade
+     * @retuen
+     */
     public Boolean insertTradeData(TradeStoreDto currentTrade){
         log.info(MessageFormat.format("Starting trade Insertion for tradeId: {0}", currentTrade.getTradeId()));
         Boolean isUpdate = Boolean.FALSE;
@@ -49,13 +54,20 @@ public class TradeStoreService {
 
         return isSaveSuccessfully;
     }
-
+    /**
+     *This scheduler which run everyday mid night 12 AM and update the expire flag if trde cross the maturity date
+     * @retuen
+     */
     @Scheduled(cron = "0 0 0 * * ?")
     public Boolean updateExpiryFlag(){
         log.info(MessageFormat.format("Updating the expiry flag for eligible trades: {0}", LocalDate.now()));
         return TradeStoreRepository.updateExpiryFlag();
     }
-
+    /**
+     *This method will load the data
+     * @param trades
+     * @retuen
+     */
     public List<TradeStoreDto> loadData(List<TradeStoreDto> trades) {
         return TradeStoreRepository.loadData(trades);
     }
