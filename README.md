@@ -1,5 +1,5 @@
 # This repository contains TradeStore service
-All the given validations are performed and integration testing is performed.
+All the given validations are performed and unit testing is performed.
 
 Scope of Improvement:
 ```
