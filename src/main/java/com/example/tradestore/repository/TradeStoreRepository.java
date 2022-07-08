@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class TradeStoreRepository {
+    
     public static List<TradeStoreDto> trades = new ArrayList<>();
 
     public static List<TradeStoreDto> loadData(List<TradeStoreDto> tradeList){
