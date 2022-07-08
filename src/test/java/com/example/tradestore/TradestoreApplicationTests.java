@@ -28,8 +28,7 @@ class TradestoreApplicationTests {
 		TradeStoreDto trade = TradeStoreDto.builder()
 				.tradeId("T1").version(1).counterPartyId("CP-1").bookId("B1")
 				.maturityDate(LocalDate.of(2020, 5, 20)).createDate(LocalDate.now()).expired("N").build();
-
-		boolean thrown = false;
+                 boolean thrown = false;
 		try {
 			tradeStoreService.insertTradeData(trade);
 		} catch (TradeStoreException e) {
