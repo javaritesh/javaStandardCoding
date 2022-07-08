@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class TradeStoreDto {
+    
     private String tradeId;
 
     private Integer version;
