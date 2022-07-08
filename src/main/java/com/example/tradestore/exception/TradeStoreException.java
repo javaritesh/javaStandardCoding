@@ -10,6 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class TradeStoreException extends RuntimeException {
+    
     private ErrorStatusCode statusCode;
 
     public TradeStoreException(String errorMessage, ErrorStatusCode statusCode) {
