@@ -20,7 +20,7 @@ public class TradeStoreService {
     /**
      *This method will insert trade data after checking all the condition
      * @param currentTrade
-     * @retuen
+     * @return
      */
     public Boolean insertTradeData(TradeStoreDto currentTrade){
         log.info(MessageFormat.format("Starting trade Insertion for tradeId: {0}", currentTrade.getTradeId()));
@@ -56,7 +56,7 @@ public class TradeStoreService {
     }
     /**
      *This scheduler which run everyday mid night 12 AM and update the expire flag if trde cross the maturity date
-     * @retuen
+     * @return
      */
     @Scheduled(cron = "0 0 0 * * ?")
     public Boolean updateExpiryFlag(){
@@ -66,7 +66,7 @@ public class TradeStoreService {
     /**
      *This method will load the data
      * @param trades
-     * @retuen
+     * @return
      */
     public List<TradeStoreDto> loadData(List<TradeStoreDto> trades) {
         return TradeStoreRepository.loadData(trades);
